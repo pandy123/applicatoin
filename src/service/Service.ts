@@ -26,7 +26,6 @@ export class Service {
       this._statusLoad = false;
       this.name = null as any;
       this._statusInitialize = null as any;
-
    }
 
    /**

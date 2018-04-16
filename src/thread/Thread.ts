@@ -78,12 +78,13 @@ export abstract class Thread {
    public process(tick: number) {
       SpeedUtil.begin();
       if (this._lastTick == 0) {
+         // 起始第一针
          var span = tick - this._startTick;
          if (span >= this.delay) {
             this.onProcess();
             this._lastTick = tick;
          }
-      } else {
+      } else {// 后面的针
          var span = tick - this._lastTick;
          if (span > this.interval) {
             this.onProcess();
